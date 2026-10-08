@@ -27,5 +27,5 @@ steps:
           echo "ERROR: index.html is missing!" && exit 1
           fi
     - name: Basic Syntax & Structure Check
-run: |
-grep -iq "<html" index.html && echo "HTML validated." || (echo "Invalid HTML structure" && exit 1)
+      run: |
+        grep -iq "<html" index.html && echo "HTML validated." || (echo "Invalid HTML structure" && exit 1)
