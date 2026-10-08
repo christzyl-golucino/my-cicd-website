@@ -7,7 +7,6 @@ on:
     branches: [ "main" ]
 
 # permissions: Explicitly sets security access controls granted to the automatically generated GITHUB_TOKEN
-# Without these, GitHub Actions cannot publish content to GitHub Pages on your behalf
 permissions:
   contents: read # Allows the runner to read and clone repository files
   pages: write # Grants permission to modify and publish files to GitHub Pages
