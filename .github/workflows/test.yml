@@ -4,8 +4,8 @@ name: CI Test Suite
 on:
   push:
     branches: [ "main" ]
-      pull_request:
-        branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 # jobs: A collection of automated tasks that run when the workflow is triggered
 jobs:
 # validate-code: A custom identifier/name for this specific job
@@ -13,7 +13,7 @@ jobs:
 # runs-on: Specifies the virtual machine (runner) OS provided by GitHub to execute commands
     runs-on: ubuntu-24.04
 # steps: The sequential list of tasks performed inside this job from top to bottom
-steps:
+    steps:
 # uses: Pulls a pre-built reusable Action from GitHub Marketplace
 # actions/checkout@v4 clones/downloads your repository files onto the runner machine
     - name: Checkout Code
@@ -25,7 +25,7 @@ steps:
           echo "SUCCESS: index.html found."
         else
           echo "ERROR: index.html is missing!" && exit 1
-          fi
+        fi
     - name: Basic Syntax & Structure Check
       run: |
         grep -iq "<html" index.html && echo "HTML validated." || (echo "Invalid HTML structure" && exit 1)
